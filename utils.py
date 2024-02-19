@@ -1,5 +1,9 @@
-def transform_country_name(s):
-    country_dict = {
+import os
+import platform
+
+
+def get_country_dict():
+    return {
         "Afghanistan": "Afghanistan",
         "AK": "United States",
         "Alabama": "United States",
@@ -65,7 +69,7 @@ def transform_country_name(s):
         "CO": "United States",
         "Cocos Islands": "Cocos Islands",
         "Colombia": "Colombia",
-        "Colorado": "Colorado",
+        "Colorado": "United States",
         "Comoros": "Comoros",
         "Connecticut": "United States",
         "Cook Islands": "Cook Islands",
@@ -143,8 +147,8 @@ def transform_country_name(s):
         "Italy": "Italy",
         "Jamaica": "Jamaica",
         "Japan": "Japan",
-        "Japan Earthquake": "Japan Earthquake",
-        "Japan region": "Japan region",
+        "Japan Earthquake": "Japan",
+        "Japan region": "Japan",
         "Jersey": "Jersey",
         "Jordan": "Jordan",
         "Juan De Nova Island": "Juan De Nova Island",
@@ -179,7 +183,7 @@ def transform_country_name(s):
         "Malta": "Malta",
         "Marshall Islands": "Marshall Islands",
         "Martinique": "Martinique",
-        "Maryland":  "United States",
+        "Maryland": "United States",
         "Massachusetts": "United States",
         "Mauritania": "Mauritania",
         "Mauritius": "Mauritius",
@@ -209,7 +213,7 @@ def transform_country_name(s):
         "Nebraska": "United States",
         "Nepal": "Nepal",
         "Netherlands": "Netherlands",
-        "Nevada": "Nevada",
+        "Nevada": "United States",
         "New Caledonia": "New Caledonia",
         "New Hampshire": "United States",
         "New Jersey": "United States",
@@ -344,7 +348,14 @@ def transform_country_name(s):
         "Zimbabwe": "Zimbabwe"
     }
 
-    if s in country_dict.keys():
-        return country_dict[s]
+
+def transform_country_name(s):
+    return get_country_dict()[s] if s in get_country_dict().keys() else None
+
+
+def print_saved_file_info(title, path):
+    if "Windows" == platform.system():
+        file_size = round(os.path.getsize(path) / 1024 / 1024, 2)
     else:
-        return None
+        file_size = round(os.path.getsize(path) / 1000 / 1000, 2)
+    print(f"{title} stored in `{path}`, with the size: {file_size} MB.")
