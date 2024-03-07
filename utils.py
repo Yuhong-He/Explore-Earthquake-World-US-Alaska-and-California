@@ -349,8 +349,88 @@ def get_country_dict():
     }
 
 
+def get_state_dict():
+    return {
+        "AK": "AK",
+        "Alabama": "AL",
+        "Alaska": "AK",
+        "Alaska region": "AK",
+        "AR": "AR",
+        "Arizona": "AZ",
+        "Arkansas": "AR",
+        "AZ": "AZ",
+        "CA": "CA",
+        "California": "CA",
+        "CO": "CO",
+        "Colorado": "CO",
+        "Connecticut": "CT",
+        "Delaware": "DE",
+        "Florida": "FL",
+        "Hawaii": "HI",
+        "HI": "HI",
+        "ID": "ID",
+        "Idaho": "ID",
+        "Illinois": "IL",
+        "Indiana": "IN",
+        "Kansas": "KS",
+        "Kentucky": "KY",
+        "KS": "KS",
+        "KY": "KY",
+        "Louisiana": "LA",
+        "Maine": "ME",
+        "Maryland": "MD",
+        "Massachusetts": "MA",
+        "Michigan": "MI",
+        "Minnesota": "MN",
+        "Mississippi": "MS",
+        "Missouri": "MO",
+        "MN": "MN",
+        "MO": "MO",
+        "Montana": "MT",
+        "MT": "MT",
+        "NC": "NC",
+        "Nebraska": "NE",
+        "Nevada": "NV",
+        "New Hampshire": "NH",
+        "New Jersey": "NJ",
+        "New Mexico": "NM",
+        "New York": "NY",
+        "NJ": "NJ",
+        "NM": "NM",
+        "North Carolina": "NC",
+        "NV": "NV",
+        "NY": "NY",
+        "OK": "OK",
+        "Oklahoma": "OK",
+        "Ohio": "OH",
+        "OR": "OR",
+        "Oregon": "OR",
+        "Pennsylvania": "PA",
+        "South Carolina": "SC",
+        "South Dakota": "SD",
+        "Tennessee": "TN",
+        "Texas": "TX",
+        "TN": "TN",
+        "TX": "TX",
+        "UT": "UT",
+        "Utah": "UT",
+        "Vermont": "VT",
+        "Virginia": "VA",
+        "WA": "WA",
+        "Washington": "WA",
+        "West Virginia": "WV",
+        "Wisconsin": "WI",
+        "WY": "WY",
+        "Wyoming": "WY"
+    }
+
+
 def transform_country_name(s):
     return get_country_dict()[s] if s in get_country_dict().keys() else None
+
+
+def transform_state_name(s):
+    return get_state_dict()[s] if s in get_state_dict().keys() else None
 
 
 def print_saved_file_info(title, path):
